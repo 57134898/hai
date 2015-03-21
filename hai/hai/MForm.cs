@@ -213,6 +213,9 @@ namespace hai
                 case "订单":
                     form = new OrderViewForm();
                     break;
+                case "查询":
+                    form = new Quary1();
+                    break;
                 default:
                     break;
             }
