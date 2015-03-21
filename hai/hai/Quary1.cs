@@ -19,7 +19,7 @@ namespace hai
 
         private void Quary1_Load(object sender, EventArgs e)
         {
-              //
+              
         }
     }
 }
