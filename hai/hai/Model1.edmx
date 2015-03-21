@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="haiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="brokeragevalue">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="value" Type="decimal" Precision="18" Scale="6" />
+        </EntityType>
+        <EntityType Name="employees">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="sex" Type="nvarchar" MaxLength="2" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" />
+          <Property Name="parid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="orderows">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="oid" Type="uniqueidentifier" />
+          <Property Name="pid" Type="uniqueidentifier" />
+          <Property Name="price" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="count" Type="int" />
+          <Property Name="todo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="oid" />
+          </Key>
+          <Property Name="oid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="eid" Type="uniqueidentifier" />
+          <Property Name="odate" Type="date" />
+          <Property Name="todo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="pid" />
+          </Key>
+          <Property Name="pid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="pname" Type="nvarchar" MaxLength="50" />
+          <Property Name="price" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="standard" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“hai.dbo.v_emp”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="v_emp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="sex" Type="nvarchar" MaxLength="2" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="parname" Type="nvarchar" MaxLength="50" />
+          <Property Name="parid" Type="uniqueidentifier" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“hai.dbo.v_orders”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="v_orders">
+          <Key>
+            <PropertyRef Name="oid" />
+          </Key>
+          <Property Name="oid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="eid" Type="uniqueidentifier" />
+          <Property Name="odate" Type="date" />
+          <Property Name="todo" Type="nvarchar" MaxLength="50" />
+          <Property Name="ename" Type="nvarchar" MaxLength="50" />
+          <Property Name="rowcount" Type="int" />
+          <Property Name="total" Type="decimal" Precision="38" Scale="6" />
+          <Property Name="maxprice" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="minprice" Type="decimal" Precision="18" Scale="6" />
+        </EntityType>
+        <EntityContainer Name="haiModelStoreContainer">
+          <EntitySet Name="brokeragevalue" EntityType="Self.brokeragevalue" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="employees" EntityType="Self.employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="orderows" EntityType="Self.orderows" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="orders" EntityType="Self.orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="products" EntityType="Self.products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="v_emp" EntityType="Self.v_emp" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_emp].[id] AS [id], 
+    [v_emp].[name] AS [name], 
+    [v_emp].[sex] AS [sex], 
+    [v_emp].[address] AS [address], 
+    [v_emp].[phone] AS [phone], 
+    [v_emp].[parname] AS [parname], 
+    [v_emp].[parid] AS [parid]
+    FROM [dbo].[v_emp] AS [v_emp]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_orders" EntityType="Self.v_orders" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_orders].[oid] AS [oid], 
+    [v_orders].[eid] AS [eid], 
+    [v_orders].[odate] AS [odate], 
+    [v_orders].[todo] AS [todo], 
+    [v_orders].[ename] AS [ename], 
+    [v_orders].[rowcount] AS [rowcount], 
+    [v_orders].[total] AS [total], 
+    [v_orders].[maxprice] AS [maxprice], 
+    [v_orders].[minprice] AS [minprice]
+    FROM [dbo].[v_orders] AS [v_orders]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="haiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="brokeragevalue">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="value" Type="Decimal" Precision="18" Scale="6" />
+        </EntityType>
+        <EntityType Name="employees">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sex" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="parid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="pid" />
+          </Key>
+          <Property Name="pid" Type="Guid" Nullable="false" />
+          <Property Name="pname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Decimal" Precision="18" Scale="6" />
+          <Property Name="standard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="haiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="brokeragevalue" EntityType="Self.brokeragevalue" />
+          <EntitySet Name="employees" EntityType="Self.employees" />
+          <EntitySet Name="products" EntityType="Self.products" />
+          <EntitySet Name="v_emp" EntityType="haiModel.v_emp" />
+          <EntitySet Name="orderows" EntityType="haiModel.orderows" />
+          <EntitySet Name="orders" EntityType="haiModel.orders" />
+          <EntitySet Name="v_orders" EntityType="haiModel.v_orders" />
+        </EntityContainer>
+        <EntityType Name="v_emp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sex" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="parname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="parid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="orderows">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="oid" Type="Guid" />
+          <Property Name="pid" Type="Guid" />
+          <Property Name="price" Type="Decimal" Precision="18" Scale="6" />
+          <Property Name="count" Type="Int32" />
+          <Property Name="todo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="oid" />
+          </Key>
+          <Property Name="oid" Type="Guid" Nullable="false" />
+          <Property Name="eid" Type="Guid" />
+          <Property Name="odate" Type="DateTime" Precision="0" />
+          <Property Name="todo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="v_orders">
+          <Key>
+            <PropertyRef Name="oid" />
+          </Key>
+          <Property Name="oid" Type="Guid" Nullable="false" />
+          <Property Name="eid" Type="Guid" />
+          <Property Name="odate" Type="DateTime" Precision="0" />
+          <Property Name="todo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="rowcount" Type="Int32" />
+          <Property Name="total" Type="Decimal" Precision="38" Scale="6" />
+          <Property Name="maxprice" Type="Decimal" Precision="18" Scale="6" />
+          <Property Name="minprice" Type="Decimal" Precision="18" Scale="6" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="haiModelStoreContainer" CdmEntityContainer="haiEntities">
+          <EntitySetMapping Name="brokeragevalue">
+            <EntityTypeMapping TypeName="haiModel.brokeragevalue">
+              <MappingFragment StoreEntitySet="brokeragevalue">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employees">
+            <EntityTypeMapping TypeName="haiModel.employees">
+              <MappingFragment StoreEntitySet="employees">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="parid" ColumnName="parid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="haiModel.products">
+              <MappingFragment StoreEntitySet="products">
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="pname" ColumnName="pname" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="standard" ColumnName="standard" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_emp">
+            <EntityTypeMapping TypeName="haiModel.v_emp">
+              <MappingFragment StoreEntitySet="v_emp">
+                <ScalarProperty Name="parid" ColumnName="parid" />
+                <ScalarProperty Name="parname" ColumnName="parname" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orderows">
+            <EntityTypeMapping TypeName="haiModel.orderows">
+              <MappingFragment StoreEntitySet="orderows">
+                <ScalarProperty Name="todo" ColumnName="todo" />
+                <ScalarProperty Name="count" ColumnName="count" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="oid" ColumnName="oid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders">
+            <EntityTypeMapping TypeName="haiModel.orders">
+              <MappingFragment StoreEntitySet="orders">
+                <ScalarProperty Name="todo" ColumnName="todo" />
+                <ScalarProperty Name="odate" ColumnName="odate" />
+                <ScalarProperty Name="eid" ColumnName="eid" />
+                <ScalarProperty Name="oid" ColumnName="oid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_orders">
+            <EntityTypeMapping TypeName="haiModel.v_orders">
+              <MappingFragment StoreEntitySet="v_orders">
+                <ScalarProperty Name="minprice" ColumnName="minprice" />
+                <ScalarProperty Name="maxprice" ColumnName="maxprice" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="rowcount" ColumnName="rowcount" />
+                <ScalarProperty Name="ename" ColumnName="ename" />
+                <ScalarProperty Name="todo" ColumnName="todo" />
+                <ScalarProperty Name="odate" ColumnName="odate" />
+                <ScalarProperty Name="eid" ColumnName="eid" />
+                <ScalarProperty Name="oid" ColumnName="oid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

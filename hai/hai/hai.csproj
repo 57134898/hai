@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9330F713-B925-48D1-BED8-E06BF5823635}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>hai</RootNamespace>
+    <AssemblyName>hishop</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>tray.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseItemForm.Designer.cs">
+      <DependentUpon>BaseItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseMgerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseMgerForm.Designer.cs">
+      <DependentUpon>BaseMgerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseViewForm.Designer.cs">
+      <DependentUpon>BaseViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="brokeragevalue.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ECurdOption.cs" />
+    <Compile Include="EmpMegrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpMegrForm.Designer.cs">
+      <DependentUpon>EmpMegrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmpViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpViewForm.Designer.cs">
+      <DependentUpon>EmpViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="employees.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FilterHelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilterHelpForm.Designer.cs">
+      <DependentUpon>FilterHelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOrder.cs" />
+    <Compile Include="MForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MForm.Designer.cs">
+      <DependentUpon>MForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MyFuncs.cs" />
+    <Compile Include="OrderMegrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderMegrForm.Designer.cs">
+      <DependentUpon>OrderMegrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="orderows.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderRowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderRowForm.Designer.cs">
+      <DependentUpon>OrderRowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="orders.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderViewForm.Designer.cs">
+      <DependentUpon>OrderViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductMegrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductMegrForm.Designer.cs">
+      <DependentUpon>ProductMegrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="products.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductViewForm.Designer.cs">
+      <DependentUpon>ProductViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="v_emp.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_orders.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BaseItemForm.resx">
+      <DependentUpon>BaseItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseMgerForm.resx">
+      <DependentUpon>BaseMgerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseViewForm.resx">
+      <DependentUpon>BaseViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmpMegrForm.resx">
+      <DependentUpon>EmpMegrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmpViewForm.resx">
+      <DependentUpon>EmpViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilterHelpForm.resx">
+      <DependentUpon>FilterHelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MForm.resx">
+      <DependentUpon>MForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderMegrForm.resx">
+      <DependentUpon>OrderMegrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderRowForm.resx">
+      <DependentUpon>OrderRowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderViewForm.resx">
+      <DependentUpon>OrderViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductMegrForm.resx">
+      <DependentUpon>ProductMegrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductViewForm.resx">
+      <DependentUpon>ProductViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tray.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
