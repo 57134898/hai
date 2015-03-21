@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(979, 518);
             this.Name = "Quary1";
             this.Text = "查询";
+            this.Load += new System.EventHandler(this.Quary1_Load);
             this.ResumeLayout(false);
 
         }

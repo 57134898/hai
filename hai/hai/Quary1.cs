@@ -16,5 +16,10 @@ namespace hai
         {
             InitializeComponent();
         }
+
+        private void Quary1_Load(object sender, EventArgs e)
+        {
+              //
+        }
     }
 }
