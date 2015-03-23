@@ -49,7 +49,7 @@ namespace hai
 
         public virtual void DoFilter()
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException("");
         }
 
         public virtual void DoRefresh()
