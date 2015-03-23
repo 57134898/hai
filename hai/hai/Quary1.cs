@@ -25,6 +25,11 @@ namespace hai
                 this.textBox1.Text = list.SingleOrDefault(p => p.id == "A").value.ToString();
                 this.textBox2.Text = list.SingleOrDefault(p => p.id == "B").value.ToString();
                 this.textBox3.Text = list.SingleOrDefault(p => p.id == "C").value.ToString();
+
+                var list1 = db.rmbvalue.ToList();
+                this.textBox4.Text = list1.SingleOrDefault(p => p.id == "A").value.ToString();
+                this.textBox5.Text = list1.SingleOrDefault(p => p.id == "B").value.ToString();
+                this.textBox6.Text = list1.SingleOrDefault(p => p.id == "C").value.ToString();
             }
         }
 
