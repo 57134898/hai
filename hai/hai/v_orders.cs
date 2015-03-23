@@ -19,9 +19,18 @@ namespace hai
         public Nullable<System.DateTime> odate { get; set; }
         public string todo { get; set; }
         public string ename { get; set; }
+        public Nullable<System.Guid> parid { get; set; }
+        public string parname { get; set; }
+        public Nullable<System.Guid> parparid { get; set; }
+        public string parparname { get; set; }
         public Nullable<int> rowcount { get; set; }
         public Nullable<decimal> total { get; set; }
         public Nullable<decimal> maxprice { get; set; }
         public Nullable<decimal> minprice { get; set; }
+        public Nullable<decimal> coin { get; set; }
+        public Nullable<decimal> parcoin { get; set; }
+        public Nullable<decimal> parparcoin { get; set; }
+        public Nullable<decimal> parrmb { get; set; }
+        public Nullable<decimal> parparrmb { get; set; }
     }
 }

@@ -19,7 +19,24 @@ namespace hai
 
         private void Quary1_Load(object sender, EventArgs e)
         {
-              //test
+            using (haiEntities db = new haiEntities())
+            {
+                var list = db.brokeragevalue.ToList();
+                this.textBox1.Text = list.SingleOrDefault(p => p.id == "A").value.ToString();
+                this.textBox2.Text = list.SingleOrDefault(p => p.id == "B").value.ToString();
+                this.textBox3.Text = list.SingleOrDefault(p => p.id == "C").value.ToString();
+            }
+        }
+
+        private void doSelectBTN_Click(object sender, EventArgs e)
+        {
+            using (haiEntities db = new haiEntities())
+            {
+                var list = db.v_orders.ToList();
+                this.dgv.DataSource = list;
+
+                this.dgv.AutoResizeColumns();
+            }
         }
     }
 }

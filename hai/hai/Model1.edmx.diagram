@@ -7,11 +7,12 @@
       <Diagram DiagramId="d200c744acf34c2d82bfcd1e185eb6f8" Name="Diagram1">
         <EntityTypeShape EntityType="haiModel.brokeragevalue" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="haiModel.employees" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="haiModel.products" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="haiModel.v_emp" Width="1.5" PointX="5.375" PointY="0.75" />
-        <EntityTypeShape EntityType="haiModel.orderows" Width="1.5" PointX="5.75" PointY="4.75" />
-        <EntityTypeShape EntityType="haiModel.orders" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="haiModel.v_orders" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="haiModel.products" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="haiModel.orderows" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="haiModel.orders" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="haiModel.rmbvalue" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="haiModel.v_emp" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="haiModel.v_orders" Width="1.5" PointX="0.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

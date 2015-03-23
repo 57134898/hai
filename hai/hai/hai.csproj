@@ -169,6 +169,9 @@
     <Compile Include="Quary1.Designer.cs">
       <DependentUpon>Quary1.cs</DependentUpon>
     </Compile>
+    <Compile Include="rmbvalue.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="v_emp.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

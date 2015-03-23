@@ -28,9 +28,10 @@ namespace hai
         public virtual DbSet<brokeragevalue> brokeragevalue { get; set; }
         public virtual DbSet<employees> employees { get; set; }
         public virtual DbSet<products> products { get; set; }
-        public virtual DbSet<v_emp> v_emp { get; set; }
         public virtual DbSet<orderows> orderows { get; set; }
         public virtual DbSet<orders> orders { get; set; }
+        public virtual DbSet<rmbvalue> rmbvalue { get; set; }
+        public virtual DbSet<v_emp> v_emp { get; set; }
         public virtual DbSet<v_orders> v_orders { get; set; }
     }
 }

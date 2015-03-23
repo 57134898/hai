@@ -12,16 +12,9 @@ namespace hai
     using System;
     using System.Collections.Generic;
     
-    public partial class v_emp
+    public partial class rmbvalue
     {
-        public System.Guid id { get; set; }
-        public string name { get; set; }
-        public string sex { get; set; }
-        public string address { get; set; }
-        public string phone { get; set; }
-        public Nullable<System.Guid> parid { get; set; }
-        public string parname { get; set; }
-        public Nullable<System.Guid> parparid { get; set; }
-        public string parparname { get; set; }
+        public string id { get; set; }
+        public Nullable<decimal> value { get; set; }
     }
 }

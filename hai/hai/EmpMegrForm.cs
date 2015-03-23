@@ -30,15 +30,16 @@ namespace hai
                 this.addressTB.Text = Dgvr.Cells["address"].Value.ToString();
                 this.sexCBB.Text = Dgvr.Cells["sex"].Value.ToString();
                 var list = db.employees.OrderBy(p => p.name).ToList();
+                list.Insert(0, new employees() { id = Guid.Parse("00000000-0000-0000-0000-000000000000"), name = "无" });
                 this.parCBB.DataSource = list;
                 this.parCBB.DisplayMember = "name";
                 this.parCBB.ValueMember = "id";
                 foreach (var item in list)
                 {
-
+                    if (Dgvr.Cells["parid"].Value == null)
+                        return;
                     if (item.id == Guid.Parse(Dgvr.Cells["parid"].Value.ToString()))
                     {
-
                         this.parCBB.SelectedItem = item;
                     }
                 }
@@ -49,7 +50,9 @@ namespace hai
             using (db = new haiEntities())
             {
                 this.Text += "--新增";
-                this.parCBB.DataSource = db.employees.OrderBy(p => p.name).ToList();
+                var list = db.employees.OrderBy(p => p.name).ToList();
+                list.Insert(0, new employees() { id = Guid.Parse("00000000-0000-0000-0000-000000000000"), name = "无" });
+                this.parCBB.DataSource = list;
                 this.parCBB.DisplayMember = "name";
                 this.parCBB.ValueMember = "id";
             }
@@ -70,7 +73,10 @@ namespace hai
                         emp.name = this.nameTB.Text;
                         emp.phone = this.phoneTB.Text;
                         emp.address = this.addressTB.Text;
-                        emp.parid = Guid.Parse(this.parCBB.SelectedValue.ToString());
+                        if (Guid.Parse(this.parCBB.SelectedValue.ToString()) != Guid.Parse("00000000-0000-0000-0000-000000000000"))
+                        {
+                            emp.parid = Guid.Parse(this.parCBB.SelectedValue.ToString());
+                        }
                         emp.sex = this.sexCBB.Text;
                         db.employees.Attach(emp);
                         db.Entry(emp).State = System.Data.Entity.EntityState.Modified;
@@ -85,7 +91,10 @@ namespace hai
                         emp.name = this.nameTB.Text;
                         emp.phone = this.phoneTB.Text;
                         emp.address = this.addressTB.Text;
-                        emp.parid = Guid.Parse(this.parCBB.SelectedValue.ToString());
+                        if (Guid.Parse(this.parCBB.SelectedValue.ToString()) != Guid.Parse("00000000-0000-0000-0000-000000000000"))
+                        {
+                            emp.parid = Guid.Parse(this.parCBB.SelectedValue.ToString());
+                        }
                         emp.sex = this.sexCBB.Text;
                         db.employees.Add(emp);
                         db.SaveChanges();
@@ -103,6 +112,7 @@ namespace hai
             this.addressTB.Text = string.Empty;
             this.phoneTB.Text = string.Empty;
             var list = db.employees.OrderBy(p => p.name).ToList();
+            list.Insert(0, new employees() { id = Guid.Parse("00000000-0000-0000-0000-000000000000"), name = "无" });
             this.parCBB.DataSource = list;
             this.parCBB.DisplayMember = "name";
             this.parCBB.ValueMember = "id";
