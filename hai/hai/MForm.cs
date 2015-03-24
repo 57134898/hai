@@ -216,6 +216,9 @@ namespace hai
                 case "查询":
                     form = new Quary1();
                     break;
+                case "报表":
+                    form = new ReportViewForm();
+                    break;
                 default:
                     break;
             }

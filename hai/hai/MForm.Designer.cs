@@ -40,7 +40,7 @@
             System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("销售数据", new System.Windows.Forms.TreeNode[] {
             treeNode4,
             treeNode5});
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("绩效表");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("报表");
             System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("报表", new System.Windows.Forms.TreeNode[] {
             treeNode7});
             this.menuStrip = new System.Windows.Forms.MenuStrip();
@@ -625,7 +625,7 @@
             treeNode6.Name = "n20";
             treeNode6.Text = "销售数据";
             treeNode7.Name = "n3010";
-            treeNode7.Text = "绩效表";
+            treeNode7.Text = "报表";
             treeNode8.Name = "n30";
             treeNode8.Text = "报表";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {

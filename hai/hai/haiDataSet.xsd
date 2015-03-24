@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="haiDataSet" targetNamespace="http://tempuri.org/haiDataSet.xsd" xmlns:mstns="http://tempuri.org/haiDataSet.xsd" xmlns="http://tempuri.org/haiDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="haiConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="haiConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.hai.Properties.Settings.GlobalReference.Default.haiConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_ordersTableAdapter" GeneratorDataComponentClassName="v_ordersTableAdapter" Name="v_orders" UserDataComponentName="v_ordersTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="haiConnectionString (Settings)" DbObjectName="hai.dbo.v_orders" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT oid, eid, odate, todo, ename, parid, parname, parparid, parparname, [rowcount], total, maxprice, minprice, coin, parcoin, parparcoin, parrmb, parparrmb ,1 AS 'cgroup' FROM dbo.v_orders</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="oid" DataSetColumn="oid" />
+              <Mapping SourceColumn="eid" DataSetColumn="eid" />
+              <Mapping SourceColumn="odate" DataSetColumn="odate" />
+              <Mapping SourceColumn="todo" DataSetColumn="todo" />
+              <Mapping SourceColumn="ename" DataSetColumn="ename" />
+              <Mapping SourceColumn="parid" DataSetColumn="parid" />
+              <Mapping SourceColumn="parname" DataSetColumn="parname" />
+              <Mapping SourceColumn="parparid" DataSetColumn="parparid" />
+              <Mapping SourceColumn="parparname" DataSetColumn="parparname" />
+              <Mapping SourceColumn="rowcount" DataSetColumn="rowcount" />
+              <Mapping SourceColumn="total" DataSetColumn="total" />
+              <Mapping SourceColumn="maxprice" DataSetColumn="maxprice" />
+              <Mapping SourceColumn="minprice" DataSetColumn="minprice" />
+              <Mapping SourceColumn="coin" DataSetColumn="coin" />
+              <Mapping SourceColumn="parcoin" DataSetColumn="parcoin" />
+              <Mapping SourceColumn="parparcoin" DataSetColumn="parparcoin" />
+              <Mapping SourceColumn="parrmb" DataSetColumn="parrmb" />
+              <Mapping SourceColumn="parparrmb" DataSetColumn="parparrmb" />
+              <Mapping SourceColumn="cgroup" DataSetColumn="cgroup" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_rebateTableAdapter" GeneratorDataComponentClassName="v_rebateTableAdapter" Name="v_rebate" UserDataComponentName="v_rebateTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="haiConnectionString (Settings)" DbObjectName="hai.dbo.v_rebate" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT [oid]
+      ,[odate]
+      ,[todo]
+      ,[ename]
+      ,[coin]
+      ,[rmb]
+      ,[level],1 as [cgroup]
+  FROM [v_rebate]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="oid" DataSetColumn="oid" />
+              <Mapping SourceColumn="odate" DataSetColumn="odate" />
+              <Mapping SourceColumn="todo" DataSetColumn="todo" />
+              <Mapping SourceColumn="ename" DataSetColumn="ename" />
+              <Mapping SourceColumn="coin" DataSetColumn="coin" />
+              <Mapping SourceColumn="rmb" DataSetColumn="rmb" />
+              <Mapping SourceColumn="level" DataSetColumn="level" />
+              <Mapping SourceColumn="cgroup" DataSetColumn="cgroup" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="haiConnectionString (Settings)" DbObjectName="hai.dbo.v_rebate" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT [oid]
+      ,[odate]
+      ,[todo]
+      ,[ename]
+      ,[coin]
+      ,[rmb]
+      ,[level],1 as [cgroup]
+  FROM [v_rebate] where [odate] between @d1 and @d2</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="d1" ColumnName="odate" DataSourceName="hai.dbo.v_rebate" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@d1" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="odate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="d2" ColumnName="odate" DataSourceName="hai.dbo.v_rebate" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@d2" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="odate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="haiDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="haiDataSet" msprop:Generator_UserDSName="haiDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="v_orders" msprop:Generator_TableClassName="v_ordersDataTable" msprop:Generator_TableVarName="tablev_orders" msprop:Generator_RowChangedName="v_ordersRowChanged" msprop:Generator_TablePropName="v_orders" msprop:Generator_RowDeletingName="v_ordersRowDeleting" msprop:Generator_RowChangingName="v_ordersRowChanging" msprop:Generator_RowEvHandlerName="v_ordersRowChangeEventHandler" msprop:Generator_RowDeletedName="v_ordersRowDeleted" msprop:Generator_RowClassName="v_ordersRow" msprop:Generator_UserTableName="v_orders" msprop:Generator_RowEvArgName="v_ordersRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="oid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnoid" msprop:Generator_ColumnPropNameInRow="oid" msprop:Generator_ColumnPropNameInTable="oidColumn" msprop:Generator_UserColumnName="oid" type="xs:string" />
+              <xs:element name="eid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columneid" msprop:Generator_ColumnPropNameInRow="eid" msprop:Generator_ColumnPropNameInTable="eidColumn" msprop:Generator_UserColumnName="eid" type="xs:string" minOccurs="0" />
+              <xs:element name="odate" msprop:Generator_ColumnVarNameInTable="columnodate" msprop:Generator_ColumnPropNameInRow="odate" msprop:Generator_ColumnPropNameInTable="odateColumn" msprop:Generator_UserColumnName="odate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="todo" msprop:Generator_ColumnVarNameInTable="columntodo" msprop:Generator_ColumnPropNameInRow="todo" msprop:Generator_ColumnPropNameInTable="todoColumn" msprop:Generator_UserColumnName="todo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ename" msprop:Generator_ColumnVarNameInTable="columnename" msprop:Generator_ColumnPropNameInRow="ename" msprop:Generator_ColumnPropNameInTable="enameColumn" msprop:Generator_UserColumnName="ename" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="parid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnparid" msprop:Generator_ColumnPropNameInRow="parid" msprop:Generator_ColumnPropNameInTable="paridColumn" msprop:Generator_UserColumnName="parid" type="xs:string" minOccurs="0" />
+              <xs:element name="parname" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnparname" msprop:Generator_ColumnPropNameInRow="parname" msprop:Generator_ColumnPropNameInTable="parnameColumn" msprop:Generator_UserColumnName="parname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="parparid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnparparid" msprop:Generator_ColumnPropNameInRow="parparid" msprop:Generator_ColumnPropNameInTable="parparidColumn" msprop:Generator_UserColumnName="parparid" type="xs:string" minOccurs="0" />
+              <xs:element name="parparname" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnparparname" msprop:Generator_ColumnPropNameInRow="parparname" msprop:Generator_ColumnPropNameInTable="parparnameColumn" msprop:Generator_UserColumnName="parparname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="rowcount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnrowcount" msprop:Generator_ColumnPropNameInRow="rowcount" msprop:Generator_ColumnPropNameInTable="rowcountColumn" msprop:Generator_UserColumnName="rowcount" type="xs:int" minOccurs="0" />
+              <xs:element name="total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="maxprice" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnmaxprice" msprop:Generator_ColumnPropNameInRow="maxprice" msprop:Generator_ColumnPropNameInTable="maxpriceColumn" msprop:Generator_UserColumnName="maxprice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="minprice" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnminprice" msprop:Generator_ColumnPropNameInRow="minprice" msprop:Generator_ColumnPropNameInTable="minpriceColumn" msprop:Generator_UserColumnName="minprice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="coin" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncoin" msprop:Generator_ColumnPropNameInRow="coin" msprop:Generator_ColumnPropNameInTable="coinColumn" msprop:Generator_UserColumnName="coin" type="xs:decimal" minOccurs="0" />
+              <xs:element name="parcoin" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnparcoin" msprop:Generator_ColumnPropNameInRow="parcoin" msprop:Generator_ColumnPropNameInTable="parcoinColumn" msprop:Generator_UserColumnName="parcoin" type="xs:decimal" minOccurs="0" />
+              <xs:element name="parparcoin" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnparparcoin" msprop:Generator_ColumnPropNameInRow="parparcoin" msprop:Generator_ColumnPropNameInTable="parparcoinColumn" msprop:Generator_UserColumnName="parparcoin" type="xs:decimal" minOccurs="0" />
+              <xs:element name="parrmb" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnparrmb" msprop:Generator_ColumnPropNameInRow="parrmb" msprop:Generator_ColumnPropNameInTable="parrmbColumn" msprop:Generator_UserColumnName="parrmb" type="xs:decimal" minOccurs="0" />
+              <xs:element name="parparrmb" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnparparrmb" msprop:Generator_ColumnPropNameInRow="parparrmb" msprop:Generator_ColumnPropNameInTable="parparrmbColumn" msprop:Generator_UserColumnName="parparrmb" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cgroup" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncgroup" msprop:Generator_ColumnPropNameInRow="cgroup" msprop:Generator_ColumnPropNameInTable="cgroupColumn" msprop:Generator_UserColumnName="cgroup" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="v_rebate" msprop:Generator_TableClassName="v_rebateDataTable" msprop:Generator_TableVarName="tablev_rebate" msprop:Generator_TablePropName="v_rebate" msprop:Generator_RowDeletingName="v_rebateRowDeleting" msprop:Generator_RowChangingName="v_rebateRowChanging" msprop:Generator_RowEvHandlerName="v_rebateRowChangeEventHandler" msprop:Generator_RowDeletedName="v_rebateRowDeleted" msprop:Generator_UserTableName="v_rebate" msprop:Generator_RowChangedName="v_rebateRowChanged" msprop:Generator_RowEvArgName="v_rebateRowChangeEvent" msprop:Generator_RowClassName="v_rebateRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="oid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnoid" msprop:Generator_ColumnPropNameInRow="oid" msprop:Generator_ColumnPropNameInTable="oidColumn" msprop:Generator_UserColumnName="oid" type="xs:string" />
+              <xs:element name="odate" msprop:Generator_ColumnVarNameInTable="columnodate" msprop:Generator_ColumnPropNameInRow="odate" msprop:Generator_ColumnPropNameInTable="odateColumn" msprop:Generator_UserColumnName="odate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="todo" msprop:Generator_ColumnVarNameInTable="columntodo" msprop:Generator_ColumnPropNameInRow="todo" msprop:Generator_ColumnPropNameInTable="todoColumn" msprop:Generator_UserColumnName="todo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ename" msprop:Generator_ColumnVarNameInTable="columnename" msprop:Generator_ColumnPropNameInRow="ename" msprop:Generator_ColumnPropNameInTable="enameColumn" msprop:Generator_UserColumnName="ename" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="coin" msprop:Generator_ColumnVarNameInTable="columncoin" msprop:Generator_ColumnPropNameInRow="coin" msprop:Generator_ColumnPropNameInTable="coinColumn" msprop:Generator_UserColumnName="coin" type="xs:decimal" minOccurs="0" />
+              <xs:element name="rmb" msprop:Generator_ColumnVarNameInTable="columnrmb" msprop:Generator_ColumnPropNameInRow="rmb" msprop:Generator_ColumnPropNameInTable="rmbColumn" msprop:Generator_UserColumnName="rmb" type="xs:decimal" minOccurs="0" />
+              <xs:element name="level" msprop:Generator_ColumnVarNameInTable="columnlevel" msprop:Generator_ColumnPropNameInRow="level" msprop:Generator_ColumnPropNameInTable="levelColumn" msprop:Generator_UserColumnName="level">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cgroup" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncgroup" msprop:Generator_ColumnPropNameInRow="cgroup" msprop:Generator_ColumnPropNameInTable="cgroupColumn" msprop:Generator_UserColumnName="cgroup" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
