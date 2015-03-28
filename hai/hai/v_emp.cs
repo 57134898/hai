@@ -23,5 +23,7 @@ namespace hai
         public string parname { get; set; }
         public Nullable<System.Guid> parparid { get; set; }
         public string parparname { get; set; }
+        public string idcardno { get; set; }
+        public string code { get; set; }
     }
 }

@@ -20,6 +20,7 @@ namespace hai
         {
 
             this.dgv.CellDoubleClick += dgv_CellDoubleClick;
+            this.dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
             this.DoRefresh();
         }
 
@@ -54,6 +55,9 @@ namespace hai
 
                 this.dgv.Columns["oid"].Visible = false;
                 this.dgv.Columns["eid"].Visible = false;
+                this.dgv.Columns["parid"].Visible = false;
+                this.dgv.Columns["parid"].Visible = false;
+                this.dgv.Columns["parparid"].Visible = false;
 
                 this.dgv.Columns["odate"].HeaderText = "日期";
                 this.dgv.Columns["ename"].HeaderText = "员工";
@@ -62,6 +66,15 @@ namespace hai
                 this.dgv.Columns["maxprice"].HeaderText = "最高价";
                 this.dgv.Columns["minprice"].HeaderText = "最低价";
                 this.dgv.Columns["todo"].HeaderText = "备注";
+                this.dgv.Columns["parname"].HeaderText = "上级";
+                this.dgv.Columns["parparname"].HeaderText = "上上级";
+
+
+                this.dgv.Columns["coin"].HeaderText = "积分";
+                this.dgv.Columns["parcoin"].HeaderText = "上级积分";
+                this.dgv.Columns["parparcoin"].HeaderText = "上上级积分";
+                this.dgv.Columns["parrmb"].HeaderText = "上级奖金";
+                this.dgv.Columns["parparrmb"].HeaderText = "上上级奖金";
 
                 this.dgv.Columns["total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 this.dgv.Columns["total"].DefaultCellStyle.Format = "N2";
@@ -72,6 +85,16 @@ namespace hai
                 this.dgv.Columns["minprice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 this.dgv.Columns["minprice"].DefaultCellStyle.Format = "N2";
 
+                this.dgv.Columns["coin"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                this.dgv.Columns["coin"].DefaultCellStyle.Format = "N2";
+                this.dgv.Columns["parcoin"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                this.dgv.Columns["parcoin"].DefaultCellStyle.Format = "N2";
+                this.dgv.Columns["parparcoin"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                this.dgv.Columns["parparcoin"].DefaultCellStyle.Format = "N2";
+                this.dgv.Columns["parrmb"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                this.dgv.Columns["parrmb"].DefaultCellStyle.Format = "N2";
+                this.dgv.Columns["parparrmb"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                this.dgv.Columns["parparrmb"].DefaultCellStyle.Format = "N2";
                 this.dgv.AutoResizeColumns();
 
             }

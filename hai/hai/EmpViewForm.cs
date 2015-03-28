@@ -52,11 +52,15 @@ namespace hai
                 this.dgv.DataSource = ds;
                 this.dgv.Columns["id"].Visible = false;
                 this.dgv.Columns["parid"].Visible = false;
+                this.dgv.Columns["parparid"].Visible = false;
                 this.dgv.Columns["name"].HeaderText = "姓名";
+                this.dgv.Columns["parparname"].HeaderText = "上上级";
                 this.dgv.Columns["sex"].HeaderText = "性别";
                 this.dgv.Columns["address"].HeaderText = "地址";
                 this.dgv.Columns["phone"].HeaderText = "手机";
                 this.dgv.Columns["parname"].HeaderText = "上级";
+                this.dgv.Columns["code"].HeaderText = "编号";
+                this.dgv.Columns["idcardno"].HeaderText = "身份证号";
                 this.dgv.AutoResizeColumns();
             }
         }

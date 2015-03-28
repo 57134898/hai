@@ -22,6 +22,8 @@
           <Property Name="phone" Type="nvarchar" MaxLength="50" />
           <Property Name="address" Type="nvarchar" MaxLength="50" />
           <Property Name="parid" Type="uniqueidentifier" />
+          <Property Name="idcardno" Type="varchar" MaxLength="20" />
+          <Property Name="code" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="orderows">
           <Key>
@@ -74,6 +76,8 @@
           <Property Name="parname" Type="nvarchar" MaxLength="50" />
           <Property Name="parparid" Type="uniqueidentifier" />
           <Property Name="parparname" Type="nvarchar" MaxLength="50" />
+          <Property Name="idcardno" Type="varchar" MaxLength="20" />
+          <Property Name="code" Type="varchar" MaxLength="20" />
         </EntityType>
         <!--生成过程中发现错误:
 警告 6002: 表/视图“hai.dbo.v_orders”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
@@ -117,7 +121,9 @@
     [v_emp].[parid] AS [parid], 
     [v_emp].[parname] AS [parname], 
     [v_emp].[parparid] AS [parparid], 
-    [v_emp].[parparname] AS [parparname]
+    [v_emp].[parparname] AS [parparname], 
+    [v_emp].[idcardno] AS [idcardno], 
+    [v_emp].[code] AS [code]
     FROM [dbo].[v_emp] AS [v_emp]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="v_orders" EntityType="Self.v_orders" store:Type="Views" store:Schema="dbo">
@@ -164,6 +170,8 @@
           <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="parid" Type="Guid" />
+          <Property Name="idcardno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="products">
           <Key>
@@ -224,6 +232,8 @@
           <Property Name="parname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="parparid" Type="Guid" />
           <Property Name="parparname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idcardno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="v_orders">
           <Key>
@@ -265,6 +275,8 @@
           <EntitySetMapping Name="employees">
             <EntityTypeMapping TypeName="haiModel.employees">
               <MappingFragment StoreEntitySet="employees">
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="idcardno" ColumnName="idcardno" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="sex" ColumnName="sex" />
@@ -317,6 +329,8 @@
           <EntitySetMapping Name="v_emp">
             <EntityTypeMapping TypeName="haiModel.v_emp">
               <MappingFragment StoreEntitySet="v_emp">
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="idcardno" ColumnName="idcardno" />
                 <ScalarProperty Name="parparname" ColumnName="parparname" />
                 <ScalarProperty Name="parparid" ColumnName="parparid" />
                 <ScalarProperty Name="parname" ColumnName="parname" />

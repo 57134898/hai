@@ -20,5 +20,7 @@ namespace hai
         public string phone { get; set; }
         public string address { get; set; }
         public Nullable<System.Guid> parid { get; set; }
+        public string idcardno { get; set; }
+        public string code { get; set; }
     }
 }

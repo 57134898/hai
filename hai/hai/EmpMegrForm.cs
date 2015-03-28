@@ -25,10 +25,12 @@ namespace hai
             using (db = new haiEntities())
             {
                 this.Text += "--更新";
-                this.nameTB.Text = Dgvr.Cells["name"].Value.ToString();
-                this.phoneTB.Text = Dgvr.Cells["phone"].Value.ToString();
-                this.addressTB.Text = Dgvr.Cells["address"].Value.ToString();
-                this.sexCBB.Text = Dgvr.Cells["sex"].Value.ToString();
+                this.nameTB.Text = MyFuncs.GetCellValue(Dgvr.Cells["name"]);
+                this.phoneTB.Text = MyFuncs.GetCellValue(Dgvr.Cells["phone"]);
+                this.addressTB.Text = MyFuncs.GetCellValue(Dgvr.Cells["address"]);
+                this.codeTB.Text = MyFuncs.GetCellValue(Dgvr.Cells["code"]);
+                this.idcardnoTB.Text = MyFuncs.GetCellValue(Dgvr.Cells["idcardno"]);
+                this.sexCBB.Text = MyFuncs.GetCellValue(Dgvr.Cells["sex"]);
                 var list = db.employees.OrderBy(p => p.name).ToList();
                 list.Insert(0, new employees() { id = Guid.Parse("00000000-0000-0000-0000-000000000000"), name = "无" });
                 this.parCBB.DataSource = list;
@@ -73,6 +75,8 @@ namespace hai
                         emp.name = this.nameTB.Text;
                         emp.phone = this.phoneTB.Text;
                         emp.address = this.addressTB.Text;
+                        emp.code = this.codeTB.Text;
+                        emp.idcardno = this.idcardnoTB.Text;
                         if (Guid.Parse(this.parCBB.SelectedValue.ToString()) != Guid.Parse("00000000-0000-0000-0000-000000000000"))
                         {
                             emp.parid = Guid.Parse(this.parCBB.SelectedValue.ToString());
@@ -91,6 +95,8 @@ namespace hai
                         emp.name = this.nameTB.Text;
                         emp.phone = this.phoneTB.Text;
                         emp.address = this.addressTB.Text;
+                        emp.code = this.codeTB.Text;
+                        emp.idcardno = this.idcardnoTB.Text;
                         if (Guid.Parse(this.parCBB.SelectedValue.ToString()) != Guid.Parse("00000000-0000-0000-0000-000000000000"))
                         {
                             emp.parid = Guid.Parse(this.parCBB.SelectedValue.ToString());
@@ -111,6 +117,8 @@ namespace hai
             this.nameTB.Text = string.Empty;
             this.addressTB.Text = string.Empty;
             this.phoneTB.Text = string.Empty;
+            this.codeTB.Text = string.Empty;
+            this.idcardnoTB.Text = string.Empty;
             var list = db.employees.OrderBy(p => p.name).ToList();
             list.Insert(0, new employees() { id = Guid.Parse("00000000-0000-0000-0000-000000000000"), name = "无" });
             this.parCBB.DataSource = list;
